@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">BigHeaderPlayer</string>
+
+    //behavior
+    <string name="scale_down_show_behavior">com.tree.bigheaderplayer.ScaleDownShowBehavior</string>
+
+</resources>
