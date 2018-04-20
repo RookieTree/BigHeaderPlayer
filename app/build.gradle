@@ -59,8 +59,15 @@ dependencies {
 
     //banner
     implementation "com.youth.banner:banner:$rootProject.bannerVersion"
-    //
+    //AgentWeb 基于 WebView ，极度容易使用以及功能强大的库，提供了 Android WebView 一系列的问题解决方案 ，并且轻量和极度灵活
     implementation "com.just.agentweb:agentweb:$rootProject.agentwebVersion"
+    //lottie 强大的动画库 利用json绘制动画
+    implementation "com.airbnb.android:lottie:$rootProject.lottieVersion"
+    //简单 漂亮 强大的logger
+    implementation "com.orhanobut:logger:$rootProject.loggerVersion"
 
+
+    //multidex 解决android方法 64k限制
+    implementation "com.android.support:multidex:$rootProject.multidexVersion"
 }
 

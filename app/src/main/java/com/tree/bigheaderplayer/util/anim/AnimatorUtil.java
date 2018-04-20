@@ -1,4 +1,4 @@
-package com.tree.bigheaderplayer;
+package com.tree.bigheaderplayer.util.anim;
 
 import android.support.v4.view.ViewCompat;
 import android.support.v4.view.ViewPropertyAnimatorListener;
