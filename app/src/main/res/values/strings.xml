@@ -4,4 +4,8 @@
     //behavior
     <string name="scale_down_show_behavior">com.tree.bigheaderplayer.util.anim.ScaleDownShowBehavior</string>
 
+    <string name="double_click_exit_tint">再一步,就退出</string>
+    <string name="collect_fail">收藏失败</string>
+    <string name="cancel_collect_fail">取消收藏失败</string>
+
 </resources>

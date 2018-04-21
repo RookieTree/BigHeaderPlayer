@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.jakewharton.butterknife'
 
 android {
 
@@ -44,6 +45,8 @@ dependencies {
     implementation "com.android.support:support-v4:$rootProject.supportLibraryVersion"
     implementation "com.android.support:design:$rootProject.supportLibraryVersion"
     implementation "com.android.support.constraint:constraint-layout:$rootProject.constraintVersion"
+    implementation "com.jakewharton:butterknife:$rootProject.butterknifeVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.butterknifeVersion"
 
     //极其简便的快速实现隐藏标题栏和导航栏的库
     implementation "com.github.githubwing:ByeBurger:$rootProject.ext.ByeBurgerVersion"
@@ -69,5 +72,9 @@ dependencies {
 
     //multidex 解决android方法 64k限制
     implementation "com.android.support:multidex:$rootProject.multidexVersion"
+    //net
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$rootProject.retrofitVersion"
 }
 

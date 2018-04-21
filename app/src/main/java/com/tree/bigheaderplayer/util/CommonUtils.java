@@ -4,15 +4,21 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
 import android.net.ConnectivityManager;
+import android.support.design.widget.Snackbar;
+import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.tree.bigheaderplayer.R;
 import com.tree.bigheaderplayer.app.HeaderApp;
 import com.tree.bigheaderplayer.util.logger.LogHelper;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.lang.reflect.ParameterizedType;
 import java.util.Random;
 
 /**
@@ -47,13 +53,13 @@ public class CommonUtils {
      * @param activity Activity
      * @param msg message
      */
-//    public static void showSnackMessage(Activity activity, String msg) {
-//        LogHelper.e("showSnackMessage ：" + msg);
-//        Snackbar snackbar = Snackbar.make(activity.getWindow().getDecorView(), msg, Snackbar.LENGTH_SHORT);
-//        View     view     = snackbar.getView();
-//        ((TextView) view.findViewById(R.id.snackbar_text)).setTextColor(ContextCompat.getColor(activity, R.color.white));
-//        snackbar.show();
-//    }
+    public static void showSnackMessage(Activity activity, String msg) {
+        LogHelper.e("showSnackMessage ：" + msg);
+        Snackbar snackbar = Snackbar.make(activity.getWindow().getDecorView(), msg, Snackbar.LENGTH_SHORT);
+        View     view     = snackbar.getView();
+        ((TextView) view.findViewById(R.id.snackbar_text)).setTextColor(ContextCompat.getColor(activity, R.color.white));
+        snackbar.show();
+    }
 
     /**
      * 判断2个对象是否相等
@@ -138,6 +144,28 @@ public class CommonUtils {
     @SuppressWarnings("unchecked")
     public static <T> T cast(Object object) {
         return (T) object;
+    }
+
+    /**
+     * 内部获取这个类 第i个泛型参数的真实类型  ，反射new出对象
+     * @param o
+     * @param i
+     * @param <T>
+     * @return
+     */
+    public static <T> T getT(Object o, int i) {
+        try {
+            return ((Class<T>) ((ParameterizedType) (o.getClass()
+                                                      .getGenericSuperclass())).getActualTypeArguments()[i])
+                    .newInstance();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (ClassCastException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 }
